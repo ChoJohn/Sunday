@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
+  const date = new Date();
+  const weekday = date.getDay();
+  const isSunday = weekday === 0;
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <div className="text">
+          Jeff Fucking Chan, today
+        </div>
+        <div className={isSunday ? "condition-true" : "condition-false"}>
+          {
+            isSunday
+            ? "IS"
+            : "IS NOT"
+          }
+        </div>
+        <div className="text">Sunday</div>
+      </div>
     </div>
   );
 }
